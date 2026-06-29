@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  
+  font-family: 'Segoe UI', sans-serif;
+ 
+  
+}
+
+#root{
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: none;
+  
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.8);
+
+}
+
+.card-header {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  font-weight: bold;
+  border-radius: 15px 15px 0 0 !important;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+.logout-btn {
+  padding: 6px 20px;
+}
+
+
+
+
