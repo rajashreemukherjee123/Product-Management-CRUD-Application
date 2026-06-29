@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 
-
-
 async function checkConnection(){
     try{
         const dbUrl = process.env.MONGO_URL;

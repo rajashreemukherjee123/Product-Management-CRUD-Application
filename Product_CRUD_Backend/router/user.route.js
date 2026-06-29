@@ -1,5 +1,5 @@
 const express = require("express");
-const env = require("dotenv").config();
+
 
 const userRouter = express.Router();
 
