@@ -21,7 +21,7 @@ function genHashPass(input){
 //--------------------------------------------------------- Signup ----------------------------------------------------------
 userRouter.post("/signup",async(req,res)=>{
     try{
-        let userObj = await userModel.insertOne({
+        let userObj = await userModel.create({
             name : req.body.name,
             email : req.body.email,
             pass1 : genHashPass(req.body.pass1)
