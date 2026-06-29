@@ -32,5 +32,5 @@ const userSchema = mongoose.Schema({
     }
 },{versionKey:false});
 
-module.exports = mongoose.model("userModel",userSchema,"users");  // eikhane "userModel" holo model er name.... r "users" holo collection er name 
+module.exports = mongoose.model("userModel",userSchema,"users");  
 console.log("userModel is ready to use");

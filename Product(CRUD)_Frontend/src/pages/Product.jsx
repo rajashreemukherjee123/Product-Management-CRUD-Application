@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 const Product = () => {
-    // show user name --- get local storage
+    
    const username = localStorage.getItem("name") ;
 
   // product form value---- add value state

@@ -25,8 +25,8 @@ const productSchema = mongoose.Schema({
     },
     userId : { 
         type : mongoose.Schema.Types.ObjectId,
-        ref : "userModel" //// eikhane model er name likhte hoy (userId chaichi seta userModel er moddhe ache tai userModel hbe.... collection er name likhle kin2 hbe na) 
-    },                   ////  populate() model er naam diye kaj kore, collection er naam diye na। Tai ref: "users" dile populate kichhu khuje payna, blank object {} return kore।
+        ref : "userModel" 
+    },                   
     created : {
         type : Date,
         default : new Date()

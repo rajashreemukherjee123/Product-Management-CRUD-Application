@@ -16,8 +16,7 @@ productRouter.post("/add",checkAuth, async(req,res)=>{
         productName : req.body.productName,
         price : req.body.price,
         description : req.body.description,
-        userId : req.user.user_id, // req.user eita asche middleware theke.. eikhane middleware a j varifytoken ta hochhe setar moddhe j userId ta ache sei ta k nichhe... last er user_id ta userRouter er jwt token er payload theke newa hoyeche....
-
+        userId : req.user.user_id, 
         });
         if(!productObj){
             return res.status(400).json({"message":"Unable to add product"});
@@ -36,7 +35,7 @@ productRouter.get("/my_product",checkAuth, async(req,res)=>{
         let productObj = await productModel
         .find({
             userId : req.user.user_id 
-        }).populate("userId","name"); /// schema field te j userId lekha seta likhte hbe 
+        }).populate("userId","name"); 
         if(productObj.length==0){
             return res.status(404).json({message:"No product found"});
             
@@ -64,7 +63,7 @@ productRouter.put("/update/:uid",checkAuth,async(req,res)=>{
             }
         );
 
-        if(productObj.matchedCount === 0){    //matchedCount === 0  no product hear or other user's product
+        if(productObj.matchedCount === 0){    
             res.status(403).json({"message":"Product not found or not yours"});
         }else if(productObj.modifiedCount === 0){
             res.status(200).json({"message":"Nothing changed"});
