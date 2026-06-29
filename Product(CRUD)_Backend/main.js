@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const env = require("dotenv").config();
 
-const host = process.env.HOST;
-const port = process.env.PORT;
+// const host = process.env.HOST;
+const port = process.env.PORT || 3000;
 
 //import database,userModel,productModel
 const db = require("./database/db");
@@ -14,6 +14,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+db();
 
 app.get("/",(req,res)=>{
     res.send("<h1>Welcome MongoDB</h1>")
@@ -27,7 +29,7 @@ app.use("/api/users",userRouter);
 const productRouter = require("./router/product.route");
 app.use("/api/product",productRouter);
 
-app.listen(port,host,()=>{
-    console.log(`Server has started http://${host}:${port}/`);
+app.listen(port,()=>{
+    console.log(`Server has started on port: ${port}`);
 })
 

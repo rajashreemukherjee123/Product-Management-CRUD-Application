@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const env = require("dotenv").config();
 
-const dbUrl = `mongodb://${process.env.HOST}:${process.env.DB_PORT}/HelloDB`;
+const dbUrl = process.env.MONGO_URL;
 
 async function checkConnection(){
     try{
@@ -12,5 +12,5 @@ async function checkConnection(){
     }
 }
 
-module.exports = checkConnection();
+module.exports = checkConnection;
 console.log("MongoDB globally connected");
