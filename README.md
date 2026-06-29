@@ -10,7 +10,8 @@ A full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** application that 
 
 ## 🚀 Live Demo
 
-**Live Website:** https://product-management-crud-application.onrender.com/
+- **Live Website:** https://product-management-crud-application.onrender.com/
+- **Repository:** https://github.com/rajashreemukherjee123/Product-Management-CRUD-Application
 
 ---
 
@@ -18,6 +19,7 @@ A full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** application that 
 
 * User Registration and Login
 * JWT Authentication & Authorization
+* Persistent login using JWT token
 * Secure password hashing using bcryptjs
 * Add new products
 * View all products added by the logged-in user
@@ -82,13 +84,19 @@ A full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** application that 
 ### Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/rajashreemukherjee123/Product-Management-CRUD-Application.git
+```
+
+### Navigate to the project directory
+
+```bash
+cd Product-Management-CRUD-Application
 ```
 
 ### Install frontend dependencies
 
 ```bash
-cd client
+cd Product_CRUD_Frontend
 npm install
 npm run dev
 ```
@@ -96,7 +104,7 @@ npm run dev
 ### Install backend dependencies
 
 ```bash
-cd server
+cd ../Product_CRUD_Backend
 npm install
 npm run dev
 ```
@@ -105,27 +113,13 @@ npm run dev
 
 ## ⚙️ Environment Variables
 
-Create a `.env` file inside the server folder and add:
+Create a `.env` file inside the **Product_CRUD_Backend** folder and add:
 
 ```env
-PORT=5000
+PORT=3000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
 ```
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-* Signup Page
-* Login Page
-* Product Dashboard
-* Add Product
-* Edit Product
-
----
 
 ## 👨‍💻 Author
 
