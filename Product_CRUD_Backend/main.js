@@ -1,8 +1,9 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
-const env = require("dotenv").config();
 
-// const host = process.env.HOST;
+
 const port = process.env.PORT || 3000;
 
 //import database,userModel,productModel
