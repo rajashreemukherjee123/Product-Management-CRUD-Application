@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
+const BACKEND_URL = "https://product-crud-backend-tphy.onrender.com";
+
 const Product = () => {
     
    const username = localStorage.getItem("name") ;
@@ -26,7 +28,7 @@ const Product = () => {
 
     try{
       const token = localStorage.getItem("token");
-      let response = await axios.post("http://localhost:3000/api/product/add",productvalue,{
+      let response = await axios.post(`${BACKEND_URL}/api/product/add`,productvalue,{
         headers :{
           "content-type":"application/json",
           "Authorization":`Bearer ${token}`
@@ -55,7 +57,7 @@ const Product = () => {
     const displayProduct = async()=>{
       try{
         let token = localStorage.getItem("token");
-        let response = await axios.get("http://localhost:3000/api/product/my_product",{
+        let response = await axios.get(`${BACKEND_URL}/api/product/my_product`,{
           headers:{
             "content-type":"application/json",
             "Authorization": `Bearer ${token}`
@@ -96,7 +98,7 @@ const brforeUpdate = (item)=>{
   const handleUpdate = async()=>{
     try{
       const token = localStorage.getItem("token");
-      let response = await axios.put("http://localhost:3000/api/product/update/"+productvalue._id,
+      let response = await axios.put(`${BACKEND_URL}/api/product/update/`+productvalue._id,
         {
           productName : productvalue.productName,
           price : productvalue.price,
@@ -136,7 +138,7 @@ const handleDelete = async(id)=>{
     console.log("Token:", token);   
     console.log("Delete ID:", id); 
     
-    let response = await axios.delete("http://localhost:3000/api/product/delete/"+ id,
+    let response = await axios.delete(`${BACKEND_URL}/api/product/delete/`+ id,
       {
         headers:{
           "Content-Type":"application/json",

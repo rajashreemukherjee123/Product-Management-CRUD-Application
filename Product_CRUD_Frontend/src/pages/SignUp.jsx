@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 
+const BACKEND_URL = "https://product-crud-backend-tphy.onrender.com";
+
 
 const SignUp = () => {
 
@@ -20,7 +22,7 @@ const SignUp = () => {
         console.log(userSignup);
 
         try{
-            let response = await axios.post("http://localhost:3000/api/users/signup",userSignup);
+            let response = await axios.post(`${BACKEND_URL}/api/users/signup`,userSignup);
             console.log(response.data);
 
             if(response.data?.message == "One user Signup successfully" ){
